@@ -51,5 +51,21 @@ namespace GatheringApp
             }
                  
         }
+
+      
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int roll = rnd.Next(1, 100);
+            infoLog.Text = roll.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
