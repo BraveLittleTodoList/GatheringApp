@@ -27,8 +27,8 @@ namespace GatheringApp
             
 
         }
-
-        public void getArea()
+        //Logic to set gathering area
+        public string GetArea()
         {
             int area = cbGatheringSelect.SelectedIndex;
             string currentArea;
@@ -54,28 +54,57 @@ namespace GatheringApp
                     pbGatheringImage.Image = Image.FromFile(@"C:\Users\cchap\source\repos\GatheringApp\GatheringApp\img\Mountain.jpg");
                     currentArea = "Mountain";
                     break;
+                
+                default:
+                    currentArea = null;
+                    break;
             }
+            return currentArea;
         }
-
+        //Controller to set gathering area
         private void cbGatheringSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getArea();
+            
+            GetArea();
         }
          
-
-      
-        
-        private void button1_Click(object sender, EventArgs e)
+        //Logic for reseiveing gatheringRewards
+        public void gatheringAreaRewards()
         {
-          
+            int currentRoll = diceRoll();
+            string CurrentArea = GetArea().ToString();
+            
+            diceRoll();
+
+
+            switch (true)
+            {
+                // populate switch statements with rewards 
+            }
+
+
+
+        }
+        
+        //Dice Roll Logic & InBetween Function 
+        public int diceRoll()
+        {
             Random rnd = new Random();
             int roll = rnd.Next(1, 100);
-            infoLog.Text = roll.ToString();
+            infoLog.Text = $"you rolled {roll}";
+            return roll;
 
+        }
+        public static bool InBetween(int roll, int low, int high)
+        {
+            return roll > low && roll < high;
 
+        }
+        //Controller for gathering. DiceRoll and rewards. 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gatheringAreaRewards();
             
-            
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
