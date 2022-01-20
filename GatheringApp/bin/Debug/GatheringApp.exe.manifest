@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GatheringApp.exe" size="3659744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GatheringApp.exe" size="3660256">
       <assemblyIdentity name="GatheringApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FoEu9gUt9OHB0eC0Q/YY8CBwzY2Wy4gPfJflX/Nq5d8=</dsig:DigestValue>
+        <dsig:DigestValue>X9t5HdGQQpcC6FGAgO5fEQE//WoZl50zVBRTcn6+t+w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
