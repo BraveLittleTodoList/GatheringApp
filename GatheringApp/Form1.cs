@@ -71,30 +71,72 @@ namespace GatheringApp
         //Logic for reseiveing gatheringRewards
         public void gatheringAreaRewards()
         {
-            int currentRoll = diceRoll();
-            string CurrentArea = GetArea().ToString();
+            int currentRoll = D100DiceRoll();
+            int supRoll = D4DiceRoll();
+            bool ForestArea = GetArea().ToString() == "Forest";
+            infoLog.Text = $"\n You rolled {currentRoll}";
             
-            diceRoll();
-
-
-            switch (true)
+            //ForestArea Rewards Bug with statting numbers ex 41,51,21
+            if(ForestArea == true && InBetween(currentRoll, 11, 20))
             {
-                // populate switch statements with rewards 
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-
-
-
+            else if(ForestArea == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 41, 50))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 50+1, 60) && InBetween(supRoll,1,4))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered {supRoll} common reactive reagent ";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 61, 70))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 71, 80))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 81, 90))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 91, 95))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 96, 100))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent!";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 1, 10))
+            {
+                infoLog.Text = $"Rolled {currentRoll} Bad Luck, you failed to gather anything";
+            }
         }
         
-        //Dice Roll Logic & InBetween Function 
-        public int diceRoll()
+        //Dice Rolls Logic & InBetween Function 
+        public int D100DiceRoll()
         {
             Random rnd = new Random();
-            int roll = rnd.Next(1, 100);
-            infoLog.Text = $"you rolled {roll}";
+            int roll = rnd.Next(0, 99);
             return roll;
 
         }
+
+        public int D4DiceRoll()
+        {
+            Random rnd = new Random();
+            int roll = rnd.Next(1, 4);
+            return roll;
+        }
+
+        
+
         public static bool InBetween(int roll, int low, int high)
         {
             return roll > low && roll < high;
@@ -109,7 +151,7 @@ namespace GatheringApp
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
        
