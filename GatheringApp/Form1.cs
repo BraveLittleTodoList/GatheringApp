@@ -72,7 +72,8 @@ namespace GatheringApp
         public void gatheringAreaRewards()
         {
             int currentRoll = D100DiceRoll();
-            int supRoll = D4DiceRoll();
+            int D4Roll = D4DiceRoll();
+            int D2Roll = D2DiceRoll();
             bool ForestArea = GetArea().ToString() == "Forest";
             bool Desert = GetArea().ToString() == "Desert";
             bool Grasslands = GetArea().ToString() == "Grasslands";
@@ -80,87 +81,184 @@ namespace GatheringApp
             bool Mountian = GetArea().ToString() == "Mountain";
 
 
-            #region MountiansArea
-            if (Mountian == true && InBetween(currentRoll, 1, 20))
+            #region MountiansArea Rewards
+            if (Mountian == true && InBetween(currentRoll, 1, 10))
             {
-                infoLog.Text = $"You failed to gather anything";
+                infoLog.Text = $"Rolled {currentRoll} You failed to gather anything";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 11, 20))
+            {
+                infoLog.Text = $"Rolled {currentRoll}, You failed to gather anything.";
             }
             else if (Mountian == true && InBetween(currentRoll, 21, 40))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            else if (Mountian == true && InBetween(currentRoll, 41, 50))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            else if (Mountian == true && InBetween(currentRoll, 51, 60))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            else if (Mountian == true && InBetween(currentRoll, 61, 70) && InBetween(D2Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully {D2Roll} gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 71, 80) && InBetween(D2Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Reactive Reagents";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 81, 90))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Uncommon Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 91, 95))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            else if (Mountian == true && InBetween(currentRoll, 96, 100))
             {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
-            }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
-            {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
-            }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
-            {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
-            }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
-            {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
-            }
-            else if (Mountian == true && InBetween(currentRoll, 21, 40))
-            {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Primal Essence";
             }
             #endregion
 
-            #region MarshArea
-            if (Marsh == true && InBetween(currentRoll, 11, 20))
+            #region MarshArea Rewards
+            if (Marsh == true && InBetween(currentRoll, 1, 10))
             {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+                infoLog.Text = $"Rolled {currentRoll} You failed to gather anything";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 11, 20))
+            {
+                infoLog.Text = $"Rolled {currentRoll}, You Gathered Common Poisonous Reagent";
             }
             else if (Marsh == true && InBetween(currentRoll, 21, 40))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-            #endregion
-
-
-            #region GrasslandsArea
-            if (Grasslands == true && InBetween(currentRoll, 11, 20))
+            else if (Marsh == true && InBetween(currentRoll, 41, 50))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 51, 60))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 61, 70) && InBetween(D4Roll, 1, 4))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully {D4Roll} gathered Common Poisonous reagents";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 71, 80) && InBetween(D4Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered {D4Roll} Common Reactive Reagents";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 81, 90))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Uncommon Poisonous Reagent";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 91, 95))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Reactive Reagent";
+            }
+            else if (Marsh == true && InBetween(currentRoll, 96, 100))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Primal Essence";
+            }
+            #endregion
+
+            #region GrasslandsArea
+            if (Grasslands == true && InBetween(currentRoll, 1, 10))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You failed to gather anything";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 11, 20))
+            {
+                infoLog.Text = $"Rolled {currentRoll}, You failed to gather anything";
             }
             else if (Grasslands == true && InBetween(currentRoll, 21, 40))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
+            else if (Grasslands == true && InBetween(currentRoll, 41, 50))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Reactive Reagent";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 51, 60))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Poisonous Reagent";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 61, 70) && InBetween(D2Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully {D2Roll} gathered Common Poisonous reagents";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 71, 80) && InBetween(D2Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered {D2Roll} Common Curative Reagents";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 81, 90))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Uncommon Curative Reagent";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 91, 95))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Uncommon Reactive Reagent";
+            }
+            else if (Grasslands == true && InBetween(currentRoll, 96, 100))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Divine Essence";
+            }
             #endregion
 
             #region DesertArea Rewards
-            if (Desert == true && InBetween(currentRoll, 11, 20))
+            if (Desert == true && InBetween(currentRoll, 1, 10))
             {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+                infoLog.Text = $"Rolled {currentRoll} You failed to gather anything";
+            }
+            else if (Desert == true && InBetween(currentRoll, 11, 20))
+            {
+                infoLog.Text = $"Rolled {currentRoll}, You failed to gather anything";
             }
             else if (Desert == true && InBetween(currentRoll, 21, 40))
             {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Reactive Reagent";
+            }
+            else if (Desert == true && InBetween(currentRoll, 41, 50))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Reactive Reagent";
+            }
+            else if (Desert == true && InBetween(currentRoll, 51, 60))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Poisonous Reagent";
+            }
+            else if (Desert == true && InBetween(currentRoll, 61, 70) && InBetween(D2Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully {D2Roll} gathered Common Reactive reagents";
+            }
+            else if (Desert == true && InBetween(currentRoll, 71, 80) && InBetween(D2Roll, 1, 2))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered {D2Roll} Common Reactive Reagents";
+            }
+            else if (Desert == true && InBetween(currentRoll, 81, 90))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Uncommon Curative Reagent";
+            }
+            else if (Desert == true && InBetween(currentRoll, 91, 95))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Uncommon Poisonous Reagent";
+            }
+            else if (Desert == true && InBetween(currentRoll, 96, 100))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Arcane Essence";
             }
             #endregion
-
-
             #region ForestArea Rewards
             //ForestArea Rewards Bug with statting numbers ex 41,51,21
-            if (ForestArea == true && InBetween(currentRoll, 11, 20))
+            if (ForestArea == true && InBetween(currentRoll, 1, 10))
+            {
+                infoLog.Text = $"Rolled {currentRoll} Bad Luck, you failed to gather anything";
+            }
+            else if (ForestArea == true && InBetween(currentRoll, 11, 20))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
@@ -172,9 +270,9 @@ namespace GatheringApp
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
-            else if (ForestArea == true && InBetween(currentRoll, 50+1, 60) && InBetween(supRoll,1,4))
+            else if (ForestArea == true && InBetween(currentRoll, 51, 60) && InBetween(D4Roll,1,4))
             {
-                infoLog.Text = $"Rolled {currentRoll} You successfully gathered {supRoll} common reactive reagent ";
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered {D2Roll} common reactive reagent ";
             }
             else if (ForestArea == true && InBetween(currentRoll, 61, 70))
             {
@@ -196,12 +294,9 @@ namespace GatheringApp
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent!";
             }
-            else if (ForestArea == true && InBetween(currentRoll, 1, 10))
-            {
-                infoLog.Text = $"Rolled {currentRoll} Bad Luck, you failed to gather anything";
-            }
         }
         #endregion 
+
 
 
         
@@ -211,7 +306,7 @@ namespace GatheringApp
 public int D100DiceRoll()
         {
             Random rnd = new Random();
-            int roll = rnd.Next(0, 99);
+            int roll = rnd.Next(1, 100);
             return roll;
 
         }
@@ -222,6 +317,14 @@ public int D100DiceRoll()
             int roll = rnd.Next(1, 4);
             return roll;
         }
+
+        public int D2DiceRoll()
+        {
+            Random rnd = new Random();
+            int roll = rnd.Next(1, 2);
+            return roll;
+        }
+
         public static bool InBetween(int roll, int low, int high)
         {
             return roll > low && roll < high;
