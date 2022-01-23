@@ -81,7 +81,39 @@ namespace GatheringApp
 
 
             #region MountiansArea
-            if (Mountian == true && InBetween(currentRoll, 11, 20))
+            if (Mountian == true && InBetween(currentRoll, 1, 20))
+            {
+                infoLog.Text = $"You failed to gather anything";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
+            {
+                infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
+            }
+            else if (Mountian == true && InBetween(currentRoll, 21, 40))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
@@ -114,7 +146,7 @@ namespace GatheringApp
             }
             #endregion
 
-            #region DesertArea
+            #region DesertArea Rewards
             if (Desert == true && InBetween(currentRoll, 11, 20))
             {
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
@@ -124,6 +156,7 @@ namespace GatheringApp
                 infoLog.Text = $"Rolled {currentRoll} You successfully gathered Common Curative Reagent";
             }
             #endregion
+
 
             #region ForestArea Rewards
             //ForestArea Rewards Bug with statting numbers ex 41,51,21
